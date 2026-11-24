@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preston Terceiro</title>
+  <meta name="description" content="Preston Terceiro. Endpoints, networking, servers, and the people who use them.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%232F8F5B'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Colors: change these to re-theme the whole site ===== */
+    :root {
+      --bg: #F4F6F7;
+      --ink: #18222C;
+      --muted: #5A6772;
+      --rule: #D6DCE0;
+      --signal: #2F8F5B;
+      --link: #1F5F8B;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141B21;
+        --ink: #E6EBEE;
+        --muted: #98A5AF;
+        --rule: #2A353E;
+        --signal: #4CC283;
+        --link: #7FB8E0;
+        color-scheme: dark;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    /* Status line: the one "IT" flourish on the page */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+    .dot {
+      width: 0.6rem; height: 0.6rem;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 0 var(--signal);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal) 55%, transparent); }
+      70%  { box-shadow: 0 0 0 0.6rem transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 3.75rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .role {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .intro {
+      margin-top: 2rem;
+      max-width: 36rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .links a {
+      display: inline-block;
+      padding: 0.6rem 1.1rem;
+      border: 1.5px solid var(--ink);
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .links a.primary { background: var(--ink); color: var(--bg); }
+    .links a:hover { border-color: var(--link); color: var(--link); }
+    .links a.primary:hover { background: var(--link); color: var(--bg); }
+
+    a:focus-visible {
+      outline: 3px solid var(--link);
+      outline-offset: 3px;
+    }
+
+    section {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Skills */
+    .skills { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1.25rem 2rem; }
+    .skills strong { display: block; font-weight: 600; }
+    .skills span { color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 30rem) {
+      main { padding-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="status"><span class="dot" aria-hidden="true"></span>Keeping things running</p>
+
+    <h1>Preston Terceiro</h1>
+    <p class="role">Desktop Support Administrator</p>
+
+    <p class="intro">
+      I support the people and systems behind a growing business: endpoints, networks,
+      servers, accounts, and the scripts that tie them together. I like learning how
+      things actually work before I fix them.
+    </p>
+
+    <div class="links">
+      <a class="primary" href="https://www.linkedin.com/in/preston-terceiro-00b48924b" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">What I work on</h2>
+      <ul class="skills">
+        <li><strong>Endpoint support</strong><span>Windows and macOS deployment, imaging, troubleshooting</span></li>
+        <li><strong>Networking</strong><span>Switching, VLANs, DNS, DHCP, connectivity issues</span></li>
+        <li><strong>Server administration</strong><span>Windows Server, Active Directory, Group Policy</span></li>
+        <li><strong>User administration</strong><span>Onboarding, offboarding, permissions, M365</span></li>
+        <li><strong>Scripting and development</strong><span>PowerShell, Python, automating repetitive work</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year">2026</span> Preston Terceiro
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
