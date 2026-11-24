@@ -1,0 +1,8 @@
+{
+  // Cloudflare Worker config: deploy this repo as a static site
+  "name": "misty-river-9e2a",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "."
+  }
+}
